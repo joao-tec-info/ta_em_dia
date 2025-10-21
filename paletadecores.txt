@@ -1,0 +1,26 @@
+/* CSS HEX */
+--green-haze: #009c46;
+--japanese-laurel: #037c17;
+--green-vogue: #012056;
+--black-squeeze: #f2f9fa;
+--ocean-green: #43a680;
+--ship-cove: #8098bb;
+--black-pearl: #030519;
+
+/* SCSS HEX */
+$green-haze: #009c46;
+$japanese-laurel: #037c17;
+$green-vogue: #012056;
+$black-squeeze: #f2f9fa;
+$ocean-green: #43a680;
+$ship-cove: #8098bb;
+$black-pearl: #030519;
+
+/* SCSS RGB */
+$green-haze: rgba(0,156,70,1);
+$japanese-laurel: rgba(3,124,23,1);
+$green-vogue: rgba(1,32,86,1);
+$black-squeeze: rgba(242,249,250,1);
+$ocean-green: rgba(67,166,128,1);
+$ship-cove: rgba(128,152,187,1);
+$black-pearl: rgba(3,5,25,1);

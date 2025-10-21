@@ -1,13 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ta em Dia ? </title>
-    <link rel="stylesheet" href="../public/style.css">
-</head>
-<body>
-    <h1 class="text-3xl font-bold text-blue-500">Tailwind funcionando!</h1>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ta em dia? - Cobranças</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'green-haze': '#009c46',
+              'japanese-laurel': '#037c17',
+              'green-vogue': '#012056',
+              'black-squeeze': '#f2f9fa',
+              'ocean-green': '#43a680',
+              'ship-cove': '#8098bb',
+              'black-pearl': '#030519',
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-gradient-to-br from-green-vogue to-ocean-green min-h-screen text-white font-sans">
 
-</body>
+    <!-- Top Navigation -->
+    <header class="flex justify-between items-center px-6 py-4 bg-green-vogue shadow-md">
+      <div class="text-2xl font-bold">Ta em Dia?</div>
+      <nav class="space-x-6 text-white font-medium">
+        <button class="hover:underline">RESUMO</button>
+        <button class="hover:underline">CLIENTES</button>
+        <button class="hover:underline">PLANOS</button>
+        <button class="hover:underline">SAIR</button>
+      </nav>
+    </header>
+
+    <!-- Dashboard Section -->
+    <main class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+      <!-- Cards -->
+      <div class="space-y-6">
+        <div class="bg-green-vogue p-6 rounded-lg shadow-md cursor-pointer hover:opacity-90 transition" onclick="filtrarClientes('ativos')">
+          <h2 class="text-lg font-semibold">CLIENTES ATIVOS</h2>
+          <p class="text-4xl font-bold text-green-haze">50</p>
+        </div>
+        <div class="bg-green-haze p-6 rounded-lg shadow-md cursor-pointer hover:opacity-90 transition" onclick="filtrarClientes('pendentes')">
+          <h2 class="text-lg font-semibold">CLIENTES PENDENTES</h2>
+          <p class="text-4xl font-bold text-black-squeeze">20</p>
+        </div>
+      </div>
+
+      <!-- Gráfico -->
+      <div class="bg-black-squeeze p-6 rounded-lg shadow-md text-green-vogue">
+        <h2 class="text-xl font-bold mb-4">Distribuição de Clientes</h2>
+        <div class="flex justify-center items-center h-64">
+          <canvas id="graficoClientes"></canvas>
+        </div>
+      </div>
+    </main>
+
+    <!-- Lista de Clientes -->
+    <section class="p-6">
+      <h2 class="text-2xl font-bold mb-4">Lista de Clientes</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white text-green-vogue rounded-lg shadow-md">
+          <thead class="bg-ship-cove text-white">
+            <tr>
+              <th class="p-3 text-left">Nome</th>
+              <th class="p-3 text-left">Status</th>
+              <th class="p-3 text-left">Email</th>
+              <th class="p-3 text-left">QRcode</th>
+            </tr>
+          </thead>
+          <tbody id="listaClientes">
+            <!-- Dados dinâmicos -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Aba de Planos -->
+    <section class="p-6 bg-green-vogue text-white">
+      <h2 class="text-2xl font-bold mb-4">Planos</h2>
+      <form id="formPlano" class="space-y-4 max-w-md">
+        <input type="text" placeholder="Nome do Plano" class="p-3 w-full rounded text-black-squeeze" />
+        <input type="number" placeholder="Valor (R$)" class="p-3 w-full rounded text-black-squeeze" />
+        <button type="submit" class="bg-green-haze px-4 py-2 rounded hover:opacity-90 transition">Gerar QR Code</button>
+      </form>
+      <div id="qrcode" class="mt-6">
+        <!-- QR Code gerado aqui -->
+      </div>
+    </section>
+
+    <script>
+      // Aqui você pode adicionar Chart.js, lógica de filtro e geração de QR Code
+    </script>
+  </body>
 </html>
